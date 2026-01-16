@@ -1,0 +1,21 @@
+{
+    "name": "aimanecouissi/module-sales-order-agreements",
+    "version": "1.0.0",
+    "description": "Add Terms and Conditions section to Admin order view page",
+    "type": "magento2-module",
+    "require": {
+        "php": "~8.3.0||~8.4.0",
+        "magento/framework": "103.0.*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "AimaneCouissi\\SalesOrderAgreements\\": ""
+        }
+    }
+}

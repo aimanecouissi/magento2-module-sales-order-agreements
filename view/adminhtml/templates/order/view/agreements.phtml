@@ -1,0 +1,48 @@
+<?php
+/**
+ * Aimane Couissi - https://aimanecouissi.com
+ * Copyright © Aimane Couissi 2026–present. All rights reserved.
+ * Licensed under the MIT License. See LICENSE for details.
+ */
+
+declare(strict_types=1);
+
+use AimaneCouissi\SalesOrderAgreements\Block\Adminhtml\Order\View\Agreements;
+use Magento\Framework\Escaper;
+
+/** @var Agreements $block */
+/** @var Escaper $escaper */
+?>
+<?php if ($block->hasAgreements()): ?>
+    <section class="admin__page-section order-view-agreements">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $escaper->escapeHtml(__('Terms and Conditions')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <?php foreach ($block->getAgreements() as $agreement): ?>
+                <div class="admin__page-section-item">
+                    <div class="admin__page-section-item-title">
+                        <span class="title"><?= $escaper->escapeHtml($agreement['name'] ?? '') ?></span>
+                        <?php if ($block->agreementExists((int)$agreement['id'])): ?>
+                            <div class="actions">
+                                <a href="<?= $escaper->escapeUrl($block->getAgreementViewUrl((int)$agreement['id'])) ?>"
+                                   target="_blank">
+                                    <?= $escaper->escapeHtml(__('View')) ?>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="admin__page-section-item-content">
+                        <div class="order-agreement-content">
+                            <?php if (!empty($agreement['is_html'])): ?>
+                                <?= $agreement['content'] ?? ''; ?>
+                            <?php else: ?>
+                                <?= $escaper->escapeHtml($agreement['content'] ?? '') ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+<?php endif; ?>
