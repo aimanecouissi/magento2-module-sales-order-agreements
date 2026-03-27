@@ -1,0 +1,24 @@
+/**
+ * Aimane Couissi - https://aimanecouissi.com
+ * Copyright © Aimane Couissi 2026–present. All rights reserved.
+ * Licensed under the MIT License. See LICENSE for details.
+ */
+.order-view-agreements {
+    .admin__page-section-item {
+        float: left;
+        #mix-grid .width(6, 12);
+        margin-bottom: 2rem;
+
+        &:nth-child(odd) {
+            clear: left;
+        }
+
+        &:nth-child(even) {
+            float: right;
+        }
+    }
+
+    .admin__page-section-content {
+        &:extend(.abs-clearfix all);
+    }
+}

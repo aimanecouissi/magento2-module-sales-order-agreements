@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimane Couissi - https://aimanecouissi.com
+ * Copyright © Aimane Couissi 2026–present. All rights reserved.
+ * Licensed under the MIT License. See LICENSE for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_place_after">
+        <observer name="aimanecouissi_sales_order_agreements_add_agreements_to_order_observer"
+                  instance="AimaneCouissi\SalesOrderAgreements\Observer\AddAgreementsToOrderObserver"/>
+    </event>
+</config>

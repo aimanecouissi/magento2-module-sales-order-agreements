@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Aimane Couissi - https://aimanecouissi.com
+ * Copyright © Aimane Couissi 2026–present. All rights reserved.
+ * Licensed under the MIT License. See LICENSE for details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <body>
+        <referenceContainer name="order_additional_info">
+            <block class="AimaneCouissi\SalesOrderAgreements\Block\Adminhtml\Order\View\Agreements"
+                   name="aimanecouissi_sales_order_agreements_order_view_agreements"
+                   template="AimaneCouissi_SalesOrderAgreements::order/view/agreements.phtml"/>
+        </referenceContainer>
+    </body>
+</layout>
